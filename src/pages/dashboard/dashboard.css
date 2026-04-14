@@ -1,0 +1,55 @@
+.dashboard {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 20px 20px */
+}
+
+.summary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px;
+
+    width: 100%;
+    /* gap: 20px; */
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 20%;
+    gap: 18px;
+    border: 1px solid var(--text);
+    border-radius: var(--radius);
+
+    .icon {
+            font-size: 24px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        color: var(--text);
+        gap: 12px;
+
+
+        .title {
+            font-size: 24px;
+        }
+
+        .content {
+            font-size: 28px;
+            font-weight: 600;
+        }
+    }
+
+}
+.overView{
+    /* height: 100vh; */
+    width: 100%;
+}

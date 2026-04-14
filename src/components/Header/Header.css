@@ -1,0 +1,45 @@
+navBar{
+  height: 10vh;
+  display: flex;
+  width: 100%;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 5px 10px rgb(228, 228, 228)
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap : 15px;
+  img{
+    width: 50px;
+  }
+  p{
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--text);
+  }
+}
+
+.search-box {
+  position: relative;
+  width: 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding-left: 40px;
+  border: 1px solid var(--text);
+  outline: none;
+}
+
+.search-box .icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--text);
+}
