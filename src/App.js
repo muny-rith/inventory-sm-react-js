@@ -13,8 +13,8 @@ import Report from './pages/report/report'
 
 
 
-import { useState, useEffect } from 'react';
-import { Route, Router, Routes } from 'react-router-dom';
+
+import { Route, Routes } from 'react-router-dom';
 
 
 function App() {
