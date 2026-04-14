@@ -1,5 +1,5 @@
 import './Header.css'
-import { NavLink } from 'react-router-dom'
+// import { NavLink } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
 import { FaSearch } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
@@ -18,7 +18,7 @@ const Header = () => {
                     <input type="text" className='input' placeholder="Search here..." />
                 </div>
                 <div className='profile'>
-                    <a href='#'> <FaUser className="icon" /></a>
+                    <a href='/'> <FaUser className="icon" /></a>
 
                 </div>
             </navBar>
