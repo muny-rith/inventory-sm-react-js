@@ -1,13 +1,16 @@
 import React from 'react';
 
-import DataTable from '../../components/DataTable/DataTable';
 
+import DataTable from '../../components/DataTable/DataTable';
+import Button from '../../components/Form/Button';
 
 import { Box, Avatar } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+
+import './report.css'
 // const rows = [
 //   { id: 1, name: 'Product A', price: 25 },
 //   { id: 2, name: 'Product B', price: 30 },
@@ -81,11 +84,11 @@ const columns = [
 ];
 const Product = () => {
   return (
-    <div className='product'>
-      <h5 style={{ alignSelf: 'flex-start' }}>Product list</h5>
+    <div className='container-fluid'>
+      <h5 style={{ alignSelf: 'flex-start' }}>Report list</h5>
       <div className='filter'>
-        <button className='input'>+ Add New</button>
-        <div>
+        <Button value={'Add New'}></Button>
+        <div className='box-search'>
           <label style={{ padding: '0 10px' }}>Search</label>
           <input className='input' type='text'></input>
         </div>

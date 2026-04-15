@@ -1,6 +1,9 @@
 import React from 'react';
 
 import DataTable from '../../components/DataTable/DataTable';
+import Button from '../../components/Form/Button';
+import '../../components/Form/Form.css';
+import './category.css'
 
 
 import { Box, Avatar } from '@mui/material';
@@ -24,46 +27,18 @@ import DeleteIcon from '@mui/icons-material/Delete';
 const rows = [
   {
     id: 1,
-    product: 'Organic Cream',
-    code: 'CREM01',
-    category: 'Beauty',
-    price: 25,
-    brand: 'Lakme',
-    cost: 10,
-    qty: 10,
-    image: 'https://via.placeholder.com/40',
+    name: 'Beauty',
   },
   {
     id: 2,
-    product: 'Rain Umbrella',
-    code: 'UM01',
-    category: 'Grocery',
-    price: 30,
-    brand: 'Sun',
-    cost: 20,
-    qty: 15,
-    image: 'https://via.placeholder.com/40',
+    name: 'Grocery',
   },
 ];
 
 const columns = [
-  {
-    field: 'product',
-    headerName: 'Product',
-    flex: 1.5,
-    renderCell: (params) => (
-      <Box display="flex" alignItems="center" gap={1}>
-        <Avatar src={params.row.image} />
-        {params.value}
-      </Box>
-    ),
-  },
-  { field: 'code', headerName: 'Code', flex: 1 },
-  { field: 'category', headerName: 'Category', flex: 1 },
-  { field: 'price', headerName: 'Price', flex: 1 },
-  { field: 'brand', headerName: 'Brand', flex: 1 },
-  { field: 'cost', headerName: 'Cost', flex: 1 },
-  { field: 'qty', headerName: 'Quantity', flex: 1 },
+
+  // { field: 'code', headerName: 'Code', flex: 1 },
+  { field: 'name', headerName: 'Name', flex: 1 },
 
   {
     field: 'action',
@@ -82,11 +57,11 @@ const columns = [
 
 const Product = () => {
   return (
-    <div className='product'>
-      <h5 style={{ alignSelf: 'flex-start' }}>Product list</h5>
+    <div className='containe-fluid'>
+      <h5 style={{ alignSelf: 'flex-start' }}>Category list</h5>
       <div className='filter'>
-        <button className='input'>+ Add New</button>
-        <div>
+        <Button value={'Add New'}></Button>
+        <div className='box-search'>
           <label style={{ padding: '0 10px' }}>Search</label>
           <input className='input' type='text'></input>
         </div>

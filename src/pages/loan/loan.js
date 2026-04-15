@@ -1,6 +1,8 @@
 import React from 'react';
 import DataTable from '../../components/DataTable/DataTable';
+import Button from '../../components/Form/Button';
 
+import './loan.css'
 
 import { Box, Avatar } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -78,13 +80,13 @@ const columns = [
     ),
   },
 ];
-const Product = () => {
+const Loan = () => {
   return (
-    <div className='product'>
-      <h5 style={{ alignSelf: 'flex-start' }}>Product list</h5>
+    <div className='container-fluid'>
+      <h5 style={{ alignSelf: 'flex-start' }}>Loan list</h5>
       <div className='filter'>
-        <button className='input'>+ Add New</button>
-        <div>
+        <Button value={'Add New'}></Button>
+        <div className='box-search'>
           <label style={{ padding: '0 10px' }}>Search</label>
           <input className='input' type='text'></input>
         </div>
@@ -94,4 +96,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Loan;

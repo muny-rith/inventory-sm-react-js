@@ -1,0 +1,14 @@
+
+
+.filter{
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    padding-bottom: 25px;
+}
+.box-search{
+    display: flex;
+    align-items: center;
+}

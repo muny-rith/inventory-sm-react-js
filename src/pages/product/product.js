@@ -1,6 +1,7 @@
 import React from 'react';
 import './product.css';
 import DataTable from '../../components/DataTable/DataTable';
+import Button from '../../components/Form/Button'
 
 import { Box, Avatar } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -24,32 +25,30 @@ const rows = [
   {
     id: 1,
     product: 'Organic Cream',
-    code: 'CREM01',
+    name: 'Phone',
     category: 'Beauty',
     price: 25,
-    brand: 'Lakme',
-    cost: 10,
     qty: 10,
     image: 'https://via.placeholder.com/40',
   },
   {
     id: 2,
     product: 'Rain Umbrella',
-    code: 'UM01',
+    name: 'computer',
     category: 'Grocery',
     price: 30,
-    brand: 'Sun',
-    cost: 20,
     qty: 15,
     image: 'https://via.placeholder.com/40',
   },
 ];
 
 const columns = [
+
+  // { field: 'code', headerName: 'Code', flex: 1 },
   {
     field: 'product',
     headerName: 'Product',
-    flex: 1.5,
+    flex: 1.2,
     renderCell: (params) => (
       <Box display="flex" alignItems="center" gap={1}>
         <Avatar src={params.row.image} />
@@ -57,17 +56,16 @@ const columns = [
       </Box>
     ),
   },
-  { field: 'code', headerName: 'Code', flex: 1 },
+  { field: 'name', headerName: 'Name', flex: 1.5 },
+
   { field: 'category', headerName: 'Category', flex: 1 },
   { field: 'price', headerName: 'Price', flex: 1 },
-  { field: 'brand', headerName: 'Brand', flex: 1 },
-  { field: 'cost', headerName: 'Cost', flex: 1 },
   { field: 'qty', headerName: 'Quantity', flex: 1 },
 
   {
     field: 'action',
     headerName: 'Action',
-    flex: 1,
+    flex: 1.2,
     sortable: false,
     renderCell: () => (
       <Box display="flex" gap={1}>
@@ -81,11 +79,11 @@ const columns = [
 
 const Product = () => {
   return (
-    <div className='product'>
+    <div className='container-fluid'>
       <h5 style={{ alignSelf: 'flex-start' }}>Product list</h5>
       <div className='filter'>
-        <button className='input'>+ Add New</button>
-        <div>
+        <Button value={'Add New'} ></Button>
+        <div className='box-search'>
           <label style={{ padding: '0 10px' }}>Search</label>
           <input className='input' type='text'></input>
         </div>
