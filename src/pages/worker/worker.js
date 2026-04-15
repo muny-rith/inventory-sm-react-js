@@ -27,24 +27,14 @@ const rows = [
   {
     id: 1,
     product: 'Organic Cream',
-    code: 'CREM01',
-    category: 'Beauty',
-    price: 25,
-    brand: 'Lakme',
-    cost: 10,
-    qty: 10,
-    image: 'https://via.placeholder.com/40',
+    name: 'Lakme',
+    position: 'Director',
   },
   {
     id: 2,
-    product: 'Rain Umbrella',
-    code: 'UM01',
-    category: 'Grocery',
-    price: 30,
-    brand: 'Sun',
-    cost: 20,
-    qty: 15,
-    image: 'https://via.placeholder.com/40',
+    product: 'Organic',
+    name: 'Yaksa',
+    position: 'labor',
   },
 ];
 
@@ -60,12 +50,8 @@ const columns = [
       </Box>
     ),
   },
-  { field: 'code', headerName: 'Code', flex: 1 },
-  { field: 'category', headerName: 'Category', flex: 1 },
-  { field: 'price', headerName: 'Price', flex: 1 },
-  { field: 'brand', headerName: 'Brand', flex: 1 },
-  { field: 'cost', headerName: 'Cost', flex: 1 },
-  { field: 'qty', headerName: 'Quantity', flex: 1 },
+  { field: 'name', headerName: 'Name', flex: 1 },
+  { field: 'position', headerName: 'Position', flex: 1 },
 
   {
     field: 'action',
