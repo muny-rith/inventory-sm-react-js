@@ -2,6 +2,7 @@ import React from 'react';
 import './product.css';
 import DataTable from '../../components/DataTable/DataTable';
 import Button from '../../components/Form/Button'
+import Input from '../../components/Form/Input'
 
 import { Box, Avatar } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -86,10 +87,7 @@ const Product = () => {
       <h5 style={{ alignSelf: 'flex-start' }}>Product list</h5>
       <div className='filter'>
         <Button value={'Add New'} ></Button>
-        <div className='box-search'>
-          <label style={{ padding: '0 10px' }}>Search</label>
-          <input className='input' type='text'></input>
-        </div>
+        <Input leftIcon={<i class="fa-solid fa-magnifying-glass"></i>}></Input>
       </div>
       <DataTable rows={rows} columns={columns}></DataTable>
     </div>

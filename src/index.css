@@ -7,7 +7,9 @@
   --text: #5C6574;
   --radius : 9px;
 }
-
+html, body, #root {
+  height: 100%;
+}
 a {
   text-decoration: none;
   color: var(--primary-color);

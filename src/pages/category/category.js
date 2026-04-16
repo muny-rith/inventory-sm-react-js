@@ -4,7 +4,7 @@ import DataTable from '../../components/DataTable/DataTable';
 import Button from '../../components/Form/Button';
 import '../../components/Form/Form.css';
 import styles from './category.module.css'
-
+import Input from '../../components/Form/Input'
 
 import { Box } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -62,8 +62,7 @@ const Product = () => {
       <div className={styles.filter}>
         <Button value={'Add New'}></Button>
         <div className={styles.box_search}>
-          <label style={{ padding: '0 10px' }}>Search</label>
-          <input className='input' type='text'></input>
+          <Input leftIcon={<i class="fa-solid fa-magnifying-glass"></i>}></Input>
         </div>
       </div>
       <DataTable rows={rows} columns={columns}></DataTable>

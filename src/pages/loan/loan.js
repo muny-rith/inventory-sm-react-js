@@ -1,6 +1,7 @@
 import React from 'react';
 import DataTable from '../../components/DataTable/DataTable';
 import Button from '../../components/Form/Button';
+import Input from '../../components/Form/Input'
 
 import './loan.css'
 
@@ -88,8 +89,8 @@ const Loan = () => {
       <div className='filter'>
         <Button value={'New Loan'}></Button>
         <div className='box-search'>
-          <label style={{ padding: '0 10px' }}>Search</label>
-          <input className='input' type='text'></input>
+          <Input leftIcon={<i class="fa-solid fa-magnifying-glass"></i>}></Input>
+
         </div>
       </div>
       <DataTable rows={rows} columns={columns}></DataTable>
