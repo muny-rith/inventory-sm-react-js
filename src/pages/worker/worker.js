@@ -42,7 +42,7 @@ const columns = [
   {
     field: 'product',
     headerName: 'Product',
-    flex: 1.5,
+    flex: 1.2,
     renderCell: (params) => (
       <Box display="flex" alignItems="center" gap={1}>
         <Avatar src={params.row.image} />
@@ -50,6 +50,7 @@ const columns = [
       </Box>
     ),
   },
+  { field: 'id', headerName: 'ID', flex: 1 },
   { field: 'name', headerName: 'Name', flex: 1 },
   { field: 'position', headerName: 'Position', flex: 1 },
 

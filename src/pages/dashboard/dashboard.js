@@ -1,65 +1,59 @@
 import React from 'react';
-import './dashboard.css'
+import styles from './dashboard.module.css'
 import '../../components/LoanoutChart/LoanoutChart'
 import LoanoutChart from '../../components/LoanoutChart/LoanoutChart';
 
 const Dashboard = () => {
     return (
-        <div className='dashboard'>
-            <h5 style={{alignSelf: 'flex-start'}}>Hi, Welcome backk!!!</h5>
-            <div className='summary'>
-                <div className='card'>
-                    <div className='icon'><i class="fa-solid fa-cloud"></i></div>
-                    <div className='item'>
-                        <div className='title'>
+        <div className={styles.dashboard}>
+            <h5 style={{ alignSelf: 'flex-start' }}>Hi, Welcome backk!!!</h5>
+            <div className={styles.container}>
+                <div className={styles.card}>
+                    <div className={styles.icon}><i class="fa-solid fa-cloud"></i></div>
+                    <div className={styles.item}>
+                        <div className={styles.title}>
                             New Items
                         </div>
-                        <div className='content'>
+                        <div className={styles.content}>
                             10
                         </div>
                     </div>
                 </div>
-                <div className='card'>
-                    <div className='icon'><i class="fa-solid fa-cloud"></i></div>
-                    <div className='item'>
-                        <div className='title'>
-                            Total Items
+                <div className={styles.card}>
+                    <div className={styles.icon}><i class="fa-solid fa-cloud"></i></div>
+                    <div className={styles.item}>
+                        <div className={styles.title}>
+                            New Items
                         </div>
-                        <div className='content'>
+                        <div className={styles.content}>
                             10
                         </div>
                     </div>
                 </div>
-                <div className='card'>
-                    <div className='icon'><i class="fa-solid fa-cloud"></i></div>
-                    <div className='item'>
-                        <div className='title'>
-                            Total Out
+                <div className={styles.card}>
+                    <div className={styles.icon}><i class="fa-solid fa-cloud"></i></div>
+                    <div className={styles.item}>
+                        <div className={styles.title}>
+                            New Items
                         </div>
-                        <div className='content'>
+                        <div className={styles.content}>
                             10
                         </div>
                     </div>
                 </div>
-                <div className='card'>
-                    <div className='icon'><i class="fa-solid fa-cloud"></i></div>
-                    <div className='item'>
-                        <div className='title'>
-                            Total Loan
+                <div className={styles.card}>
+                    <div className={styles.icon}><i class="fa-solid fa-cloud"></i></div>
+                    <div className={styles.item}>
+                        <div className={styles.title}>
+                            New Items
                         </div>
-                        <div className='content'>
+                        <div className={styles.content}>
                             10
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
             </div>
-            <div className='overView'>
+            <div className={styles.overview}>
                 <LoanoutChart></LoanoutChart>
             </div>
 

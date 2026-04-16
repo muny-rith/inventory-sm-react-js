@@ -27,6 +27,7 @@ const rows = [
     product: 'Organic Cream',
     name: 'Phone',
     category: 'Beauty',
+    departement: 'A1',
     price: 25,
     qty: 10,
     image: 'https://via.placeholder.com/40',
@@ -36,6 +37,7 @@ const rows = [
     product: 'Rain Umbrella',
     name: 'computer',
     category: 'Grocery',
+    departement: 'A2',
     price: 30,
     qty: 15,
     image: 'https://via.placeholder.com/40',
@@ -59,6 +61,7 @@ const columns = [
   { field: 'name', headerName: 'Name', flex: 1.5 },
 
   { field: 'category', headerName: 'Category', flex: 1 },
+  { field: 'departement', headerName: 'Departement', flex: 1.2 },
   { field: 'price', headerName: 'Price', flex: 1 },
   { field: 'qty', headerName: 'Quantity', flex: 1 },
 

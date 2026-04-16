@@ -1,8 +1,8 @@
 import './Header.css'
 // import { NavLink } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
-import { FaSearch } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import SearchBox from '../Form/SearchBox';
 
 const Header = () => {
     return (
@@ -13,10 +13,7 @@ const Header = () => {
                     <img src={logo} alt="logo" />
                     <p>Moon Inventory</p>
                 </div>
-                <div className="search-box">
-                    <FaSearch className="icon" />
-                    <input type="text" className='input' placeholder="Search here..." />
-                </div>
+                <SearchBox></SearchBox>
                 <div className='profile'>
                     <a href='/'> <FaUser className="icon" /></a>
 
