@@ -3,8 +3,8 @@ import './Navbar.css'
 import { FaUser } from "react-icons/fa";
 import TocIcon from '@mui/icons-material/Toc';
 
-import { delay, motion, rgba } from 'framer-motion'
-import { useState } from 'react';
+import {  motion } from 'framer-motion'
+// import { useState } from 'react';
 // import SearchBox from '../Form/SearchBox';
 
 const Navbar = ({ setOpen }) => {

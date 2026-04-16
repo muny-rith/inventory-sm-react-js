@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import styles from "./MainLayout.module.css";
 import { useState } from "react";
 
-import { easeInOut, motion } from 'framer-motion';
+import {  motion } from 'framer-motion';
 
 export default function MainLayout() {
 
