@@ -3,7 +3,7 @@ import DataTable from '../../components/DataTable/DataTable';
 import Button from '../../components/Form/Button';
 import Input from '../../components/Form/Input'
 
-import './loan.css'
+import styles from './loan.module.css'
 
 import { Box, Avatar } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
@@ -86,9 +86,9 @@ const Loan = () => {
   return (
     <div className='container-fluid'>
       <h5 style={{ alignSelf: 'flex-start' }}>Loan list</h5>
-      <div className='filter'>
+      <div className={styles.filter}>
         <Button value={'New Loan'}></Button>
-        <div className='box-search'>
+        <div className={styles.box_search}>
           <Input leftIcon={<i class="fa-solid fa-magnifying-glass"></i>}></Input>
 
         </div>

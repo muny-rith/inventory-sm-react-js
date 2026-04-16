@@ -2,19 +2,26 @@
 .layout {
   display: flex;
   height: 100vh;
+  /* background: linear-gradient(179deg,#176eb5,#d545d7); */
 }
 
 .sidebar {
+  display: flex;
   width: 250px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.651);
+  position: sticky;
   /* min-height: 100vh; */
   /* display: flex; */
+  top: 0;
+  left: 0;
+  flex-shrink: 0; /* 🔥 important */
 }
 
 .main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  width: auto;
 }
 
 .navbar {
