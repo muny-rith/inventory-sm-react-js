@@ -27,30 +27,30 @@ import './worker.css'
 const rows = [
   {
     id: 1,
-    product: 'Organic Cream',
+    // product: 'Organic Cream',
     name: 'Lakme',
     position: 'Director',
   },
   {
     id: 2,
-    product: 'Organic',
+    // product: 'Organic',
     name: 'Yaksa',
     position: 'labor',
   },
 ];
 
 const columns = [
-  {
-    field: 'product',
-    headerName: 'Product',
-    flex: 1.2,
-    renderCell: (params) => (
-      <Box display="flex" alignItems="center" gap={1}>
-        <Avatar src={params.row.image} />
-        {params.value}
-      </Box>
-    ),
-  },
+  // {
+  //   field: 'product',
+  //   headerName: 'Product',
+  //   flex: 1.2,
+  //   renderCell: (params) => (
+  //     <Box display="flex" alignItems="center" gap={1}>
+  //       <Avatar src={params.row.image} />
+  //       {params.value}
+  //     </Box>
+  //   ),
+  // },
   { field: 'id', headerName: 'ID', flex: 1 },
   { field: 'name', headerName: 'Name', flex: 1 },
   { field: 'position', headerName: 'Position', flex: 1 },

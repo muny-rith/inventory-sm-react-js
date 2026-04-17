@@ -8,42 +8,9 @@ import { Box, Avatar } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import supabase from '../../supabaseClient';
+import { useEffect, useState } from 'react'
 
-// const rows = [
-//   { id: 1, name: 'Product A', price: 25 },
-//   { id: 2, name: 'Product B', price: 30 },
-// ];
-
-// const columns = [
-//   { field: 'name', headerName: 'Product', flex: 1 },
-//   { field: 'price', headerName: 'Price', flex: 1 },
-// ];
-
-
-
-
-const rows = [
-  {
-    id: 1,
-    product: 'Organic Cream',
-    name: 'Phone',
-    category: 'Beauty',
-    departement: 'A1',
-    price: 25,
-    qty: 10,
-    image: 'https://via.placeholder.com/40',
-  },
-  {
-    id: 2,
-    product: 'Rain Umbrella',
-    name: 'computer',
-    category: 'Grocery',
-    departement: 'A2',
-    price: 30,
-    qty: 15,
-    image: 'https://via.placeholder.com/40',
-  },
-];
 
 const columns = [
 
@@ -59,6 +26,8 @@ const columns = [
       </Box>
     ),
   },
+  { field: 'code', headerName: 'Code', flex: 1 },
+
   { field: 'name', headerName: 'Name', flex: 1.5 },
 
   { field: 'category', headerName: 'Category', flex: 1 },
@@ -82,16 +51,62 @@ const columns = [
 ];
 
 const Product = () => {
+  const [rows, setRows] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchProducts()
+  }, [])
+
+  async function fetchProducts() {
+    const { data, error } = await supabase
+      .from('tb_product')
+      .select('*, tb_category(cate_name)')
+
+    if (error) {
+      console.error(error)
+    } else {
+      const mapped = data.map(item => ({
+        id:          item.pro_id,
+        // product:     item.pro_name,
+        code:        item.pro_code,
+        name:        item.pro_name,
+        category:    item.tb_category?.cate_name,
+        departement: item.pro_departement,
+        price:       item.pro_price,
+        qty:         item.pro_qty,
+        image:       'https://via.placeholder.com/40',
+      }))
+      setRows(mapped)
+    }
+    setLoading(false)
+  }
+
+  // const columns = [
+  //   { field: 'image',       headerName: 'Image' },
+  //   { field: 'product',     headerName: 'Product' },
+  //   { field: 'name',        headerName: 'Name' },
+  //   { field: 'category',    headerName: 'Category' },
+  //   { field: 'departement', headerName: 'Department' },
+  //   { field: 'price',       headerName: 'Price' },
+  //   { field: 'qty',         headerName: 'Qty' },
+  // ]
+
   return (
     <div className='container-fluid'>
       <h5 style={{ alignSelf: 'flex-start' }}>Product list</h5>
       <div className='filter'>
-        <Button value={'Add New'} ></Button>
-        <Input leftIcon={<i class="fa-solid fa-magnifying-glass"></i>}></Input>
+        <Button value={'Add New'} />
+        <Input leftIcon={<i className="fa-solid fa-magnifying-glass"></i>} />
       </div>
-      <DataTable rows={rows} columns={columns}></DataTable>
-    </div>
-  );
-};
 
-export default Product;
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <DataTable rows={rows} columns={columns} />
+      )}
+    </div>
+  )
+}
+
+export default Product

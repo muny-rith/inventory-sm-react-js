@@ -10,8 +10,6 @@ const SideBar = () => {
 
     return (
         <nav
-
-
             className="sidebar">
             <div className='logo'>
                 <img src={logo} alt="logo" />
