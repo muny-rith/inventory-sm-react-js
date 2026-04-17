@@ -4,7 +4,7 @@ import DataTable from '../../components/DataTable/DataTable';
 import Button from '../../components/Form/Button';
 import Input from '../../components/Form/Input'
 
-import { Box, Avatar } from '@mui/material';
+import { Box} from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
