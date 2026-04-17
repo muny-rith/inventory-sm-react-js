@@ -60,11 +60,12 @@ const columns = [
   // { field: 'code', headerName: 'Code', flex: 1 },
   { field: 'name', headerName: 'Name', flex: 1.5 },
   { field: 'style', headerName: 'Style', flex: 1 },
-  { field: 'category', headerName: 'Category', flex: 1 },
+  // { field: 'category', headerName: 'Category', flex: 1 },
   { field: 'qty', headerName: 'Quantity', flex: 1 },
   { field: 'taken_by', headerName: 'Taken by', flex: 1 },
   { field: 'taken_date', headerName: 'Taken', flex: 1 },
   { field: 'return_date', headerName: 'Return', flex: 1 },
+  { field: 'other', headerName: 'Other', flex: 1 },
 
 
   {

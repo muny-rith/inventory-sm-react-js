@@ -1,13 +1,14 @@
 
 .layout {
+  width: 100%;
   display: flex;
   height: 100vh;
   /* background: linear-gradient(179deg,#176eb5,#d545d7); */
 }
 
 .sidebar {
-  display: flex;
-  width: 250px;
+  /* display: flex; */
+  /* width: 250px; */
   background-color: rgba(255, 255, 255, 0.651);
   position: sticky;
   /* min-height: 100vh; */
@@ -21,7 +22,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: auto;
+  min-width: 0; /* 🔥 fix shrinking issue */
+  /* width: fit-content; */
 }
 
 .navbar {
