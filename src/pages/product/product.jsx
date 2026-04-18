@@ -3,10 +3,10 @@
 import React, { useState, useMemo } from 'react';
 import './product.css';
 
-import DataTable     from '../../components/DataTable/DataTable';
-import Button        from '../../components/Form/Button';
-import Input         from '../../components/Form/Input';
-import ProductModal  from './ProductModal';   // ← imported from same folder
+import DataTable from '../../components/DataTable/DataTable';
+import Button from '../../components/Form/Button';
+import Input from '../../components/Form/Input';
+import ProductModal from './ProductModal';   // ← imported from same folder
 
 import {
   Box, Avatar, Tooltip, Snackbar, Alert,
@@ -15,8 +15,8 @@ import {
 } from '@mui/material';
 
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import EditIcon       from '@mui/icons-material/Edit';
-import DeleteIcon     from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import { useProducts } from '../../hooks/useProducts';
 
@@ -26,9 +26,9 @@ const Product = () => {
   const { rows, categories, loading, submitting, handleAdd, handleUpdate, handleDelete } =
     useProducts();
 
-  const [search,   setSearch]   = useState('');
-  const [modal,    setModal]    = useState({ open: false, editRow: null ,viewOnly: false});
-  const [toast,    setToast]    = useState(INITIAL_TOAST);
+  const [search, setSearch] = useState('');
+  const [modal, setModal] = useState({ open: false, editRow: null, viewOnly: false });
+  const [toast, setToast] = useState(INITIAL_TOAST);
   const [deleting, setDeleting] = useState(null);
 
   const filteredRows = useMemo(() => {
@@ -81,14 +81,15 @@ const Product = () => {
           </Box>
         ),
       },
-      { field: 'code',       headerName: 'Code',       flex: 1   },
-      { field: 'category',   headerName: 'Category',   flex: 1   },
+      { field: 'name', headerName: 'Name', flex: 1 },
+      { field: 'code', headerName: 'Code', flex: 1 },
+      { field: 'category', headerName: 'Category', flex: 1 },
       { field: 'department', headerName: 'Department', flex: 1.2 },
       {
         field: 'price',
         headerName: 'Price',
         flex: 1,
-        valueFormatter: ({ value }) =>
+        valueFormatter: (value) =>
           value != null
             ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value)
             : '—',
@@ -110,7 +111,7 @@ const Product = () => {
             <Tooltip title="Edit">
               <EditIcon
                 sx={{ color: '#66bb6a', cursor: 'pointer', fontSize: 20 }}
-                onClick={() => setModal({ open: true, editRow: params.row , viewOnly: false})}
+                onClick={() => setModal({ open: true, editRow: params.row, viewOnly: false })}
               />
             </Tooltip>
             <Tooltip title="Delete">
@@ -155,7 +156,7 @@ const Product = () => {
         submitting={submitting}
         categories={categories}
         defaultValues={modal.editRow}
-        viewOnly= {modal.viewOnly}
+        viewOnly={modal.viewOnly}
       />
 
       <Dialog open={Boolean(deleting)} onClose={() => setDeleting(null)} maxWidth="xs" fullWidth>
