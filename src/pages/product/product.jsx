@@ -94,7 +94,7 @@ const Product = () => {
             ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value)
             : '—',
       },
-      { field: 'qty', headerName: 'Qty', flex: 0.7, type: 'number' },
+      { field: 'qty', headerName: 'Qty', flex: 0.7, type: 'number',  align: 'left', headerAlign: 'left', },
       {
         field: 'action',
         headerName: 'Actions',
@@ -163,7 +163,7 @@ const Product = () => {
         <DialogTitle>Delete product?</DialogTitle>
         <DialogContent>This action cannot be undone.</DialogContent>
         <DialogActions>
-          <Button variant="text" onClick={() => setDeleting(null)}>Cancel</Button>
+          <Button value = "Cancel" variant="text" onClick={() => setDeleting(null)} ></Button>
           <Button value="Delete" onClick={confirmDelete} sx={{ color: '#ef5350' }} />
         </DialogActions>
       </Dialog>

@@ -3,6 +3,8 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
+import './ProductModal.css'
+
 import {
   Dialog, DialogTitle, DialogContent, DialogActions,
   Box, MenuItem, Select, FormControl, InputLabel,
@@ -59,6 +61,7 @@ const ProductModal = ({ open, onClose, onSubmit, submitting, categories, default
           sx={{ display: 'flex', flexDirection: 'column', gap: 2, pt: 1 }}
         >
           <Box>
+            <label className="form-label">Code</label>
             <input
               {...register('code', RULES.code)}
               disabled={isView}
@@ -69,6 +72,7 @@ const ProductModal = ({ open, onClose, onSubmit, submitting, categories, default
           </Box>
 
           <Box>
+            <label className="form-label">Name</label>
             <input
               {...register('name', RULES.name)}
               disabled={isView}
@@ -79,7 +83,10 @@ const ProductModal = ({ open, onClose, onSubmit, submitting, categories, default
           </Box>
 
           <Box>
+            <label className="form-label">Category</label>
+
             <FormControl fullWidth size="small" error={Boolean(errors.categoryId)}>
+
               <InputLabel>Category *</InputLabel>
               <Select
                 {...register('categoryId', RULES.categoryId)}
@@ -99,6 +106,8 @@ const ProductModal = ({ open, onClose, onSubmit, submitting, categories, default
           </Box>
 
           <Box>
+            <label className="form-label">Department</label>
+
             <input
               {...register('department', RULES.department)}
               disabled={isView}
@@ -109,7 +118,10 @@ const ProductModal = ({ open, onClose, onSubmit, submitting, categories, default
           </Box>
 
           <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 2 }}>
+
             <Box>
+            <label className="form-label">Price</label>
+
               <input
                 {...register('price', RULES.price)}
                 disabled={isView}
@@ -121,6 +133,8 @@ const ProductModal = ({ open, onClose, onSubmit, submitting, categories, default
               {errors.price && <span className="error-msg">{errors.price.message}</span>}
             </Box>
             <Box>
+              <label className="form-label">Qty</label>
+
               <input
                 {...register('qty', RULES.qty)}
                 disabled={isView}
